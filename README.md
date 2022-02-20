@@ -51,6 +51,11 @@ Feel free to elaborate on how you would improve any of the following topics
 
 * Code Structuring:
 
-* Refactoring:
+* Refactoring: 
+
+* styled components: RelatedLink = wet
+* keys
+* clean up breadcrumb aesthetic
+* can use GraphiQL via GitHub's Explorer to quickly and easily draft a query: https://docs.github.com/en/graphql/overview/explorer
 
 * Additional Features:
