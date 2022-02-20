@@ -1,14 +1,35 @@
-
-import { useState } from 'react';
-import styled from 'styled-components';
+// Libraries
+import { useState, useEffect } from 'react';
 import { gql, useQuery } from '@apollo/client';
+import styled from 'styled-components';
 
 function App() {
 
   const [topic, setTopic] = useState('react');
   const [search, setSearch] = useState('');
+  
+  // IN REACT COMPONENT ...
+  const QUERY = gql`
+    query ($topic: ${topic}){
+      topic(name: $topic) {
+        stargazerCount
+        relatedTopics(first: 10) {
+          name
+          stargazers {
+            totalCount
+          }
+        }
+      }
+    }`
 
-  console.log(process.env.REACT_APP_GITHUB_ACCESS_TOKEN)
+  const { loading, error, data } = useQuery(QUERY);
+
+  if (loading) console.log("Loading...");
+  if (error) console.error(error);
+  
+
+  console.log(data);
+
 
   function handleChange(e) {
     setSearch(e.target.value);
@@ -37,7 +58,7 @@ function App() {
       <Button type="submit" onClick={handleSubmit}>Submit</Button>
       {/* breadcrumbs here */}
       <H2>{topic.toUpperCase()}</H2>
-      {/* linked topics here */}
+      <RelatedTopics data={data.relatedTopics}/>
       {/* topic (# stargazers) */}
       {/* in a flex-wrap element with space between */}
     </PageStyle>

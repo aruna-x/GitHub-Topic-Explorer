@@ -29,6 +29,17 @@ Best of luck
 
 * Leave any technical notes on any libraries or tools you chose to use, the more detail the better.
 
+* https://www.apollographql.com/docs/react/get-started/
+* https://docs.github.com/en/graphql/overview/explorer
+* https://docs.github.com/en/graphql/guides/forming-calls-with-graphql#authenticating-with-graphql
+* Remember to restart server when changing environment vars.
+
+Check rate limit for unauthorized apps:
+
+  curl \
+  -H "Accept: application/vnd.github.v3+json" \
+  https://api.github.com/rate_limit;
+
 ### How to run app & test
 
 * Leave instruction on how to run and test your app here
