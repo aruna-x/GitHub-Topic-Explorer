@@ -1,26 +1,11 @@
 // Libraries
-import React from 'react';
-import ReactDOM from 'react-dom';
-import { ApolloClient, InMemoryCache, ApolloProvider, HttpLink } from '@apollo/client';
+import React from "react";
+import ReactDOM from "react-dom";
+import { ApolloProvider } from "@apollo/client";
 
 // Components & Modules
-import App from './App';
-import './index.css';
-
-// Apollo/GraphQL client set up
-const link = new HttpLink({
-  uri: 'https://api.github.com/graphql',
-  headers: {
-    'Authorization': `Bearer ${process.env.REACT_APP_GITHUB_ACCESS_TOKEN}`
-  }
-});
-
-const cache = new InMemoryCache();
-
-const client = new ApolloClient({
-  link: link,
-  cache: cache
-});
+import App from "./components/App";
+import { client } from "./modules/apolloClient";
 
 ReactDOM.render(
   <React.StrictMode>
@@ -28,5 +13,5 @@ ReactDOM.render(
       <App />
     </ApolloProvider>
   </React.StrictMode>,
-  document.getElementById('root')
+  document.getElementById("root")
 );
