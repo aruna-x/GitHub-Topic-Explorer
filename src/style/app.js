@@ -1,7 +1,7 @@
 // Libraries
 import styled from "styled-components";
 
-const PageStyle = styled.div`
+const PageStyle = styled.main`
   margin: 100px auto;
   text-align: center;
   padding: 50px;

@@ -1,7 +1,7 @@
 // Libraries
 import styled from "styled-components";
 
-const RelatedLink = styled.span`
+const RelatedLink = styled.a`
   color: blue;
   text-decoration: underline;
 

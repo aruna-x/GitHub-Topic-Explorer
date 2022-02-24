@@ -1,9 +1,9 @@
 // Libraries
-import { Fragment } from "react";
+import { Fragment } from 'react';
 
 // Components, Modules, Styles
 import { RelatedLink } from "../style/global";
-import { BreadWrapper } from "../style/breadcrumb";
+import { BreadWrapper } from "../style/breadcrumbs";
 
 function Breadcrumbs({ setTopic, breadcrumbs, setBreadbrumbs, generateKey }) {
   // when breadcrumb is clicked: remove subsequent breadcrumbs & set new topic
@@ -14,25 +14,25 @@ function Breadcrumbs({ setTopic, breadcrumbs, setBreadbrumbs, generateKey }) {
   }
 
   // maps the breadcrumbs from state to react-friendly list for display
-  const BreadcrumbList = () => {
+  const RenderBreadcrumbs = (b, index) => {
     const length = breadcrumbs.length;
     return (
-      <>
-        {breadcrumbs.map((b, i) => (
-          <Fragment key={generateKey(i)}>
-            <RelatedLink onClick={() => breadcrumbClick(i)}>{b}</RelatedLink>
-            {i + 1 === length ? <></> : <> > </>}
-          </Fragment>
-        ))}
-      </>
+      <Fragment key={generateKey(index)}>
+        <RelatedLink onClick={() => breadcrumbClick(index)}>{b}</RelatedLink>
+        {index + 1 === length ? <></> : <> > </>}
+      </Fragment>
+    );
+  }
+
+  const BreadcrumbList = () => {
+    return (
+      <BreadWrapper>
+        {breadcrumbs.map(RenderBreadcrumbs)}
+      </BreadWrapper>
     );
   };
 
-  return (
-    <BreadWrapper>
-      <BreadcrumbList />
-    </BreadWrapper>
-  );
+  return <BreadcrumbList />;
 }
 
 export default Breadcrumbs;

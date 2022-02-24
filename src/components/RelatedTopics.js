@@ -45,8 +45,16 @@ function RelatedTopics({ topic, setTopic, setBreadcrumbs, generateKey }) {
     );
   };
 
+  const RelatedTopicsList = () => {
+    return(
+      <section>
+        {data.topic.relatedTopics.map(RenderRelated)}
+      </section>
+    )  
+  }
+
   // ternary here prevents app-breaking error on first render with no data
-  return data ? data.topic.relatedTopics.map(RenderRelated) : <></>;
+  return data ? <RelatedTopicsList /> : <></>;
 }
 
 export default RelatedTopics;

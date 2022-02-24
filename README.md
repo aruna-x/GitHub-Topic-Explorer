@@ -56,7 +56,8 @@ Testing is included in future improvements below, but query data can be double c
 - Refactoring:
 
   - At Breadcrumb.js line 26 there is a " > " character that **incorrectly** triggers an error in VS Code. I'd find a way not to set off those bells.
-  - A better way to handle state variables might have been to use Redux, Redux-Persist, and Thunk (all of which I'm familiar with) to alleviate prop drilling (Redux), persist state even on refresh (Redux-Persist), and pull in inital data before the app loads (Thunk middleware).
+  - A better way to handle state variables might have been to use Redux, Redux-Persist, and Thunk (all of which I'm familiar with) to alleviate prop drilling (Redux), persist state even on refresh (Redux-Persist), and pull in inital data before the app loads (Thunk).
+  - Improve semantic HTML
 
 - Additional Features:
   

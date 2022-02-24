@@ -14,19 +14,20 @@ function Search({ setTopic, setBreadbrumbs }) {
   }
 
   // on submit: set new topic & reset search field + breadbrumbs
-  function handleSearch() {
+  function handleSearch(e) {
+    e.preventDefault();
     setTopic(search);
     setSearch("");
     setBreadbrumbs([]);
   }
 
   return (
-    <>
+    <form onSubmit={handleSearch}>
       <Input onChange={handleChange} value={search} />
-      <Button type="submit" onClick={handleSearch}>
+      <Button type="submit">
         Submit
       </Button>
-    </>
+    </form>
   );
 }
 
