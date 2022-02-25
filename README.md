@@ -17,6 +17,13 @@
 - React Dom v17.0.2
 - React Scripts v5.0.0
 
+### Redux Packages
+
+- React-Redux v7.2.6
+  - *Redux allows the app to scale state nicely as the app grows, by preventing cumbersome prop drilling.*
+- Redux-Persist v6.0.0
+  - *Redux-Persist uses local storage to maintain state even on page load. This helps a user keep their breadcrumb history if they accidentally refresh or exit the page.*
+
 ### Styling Packages
 
 - [Styled Components](https://styled-components.com/) v5.3.3
@@ -36,9 +43,9 @@
 
 ## How to Run App & Test
 
-(1) At the top level of the app's directory, create a .env file, and add your GitHub API key.
+(1) At the top level of the app's directory, create a .env file, and add your [GitHub API key](https://docs.github.com/en/free-pro-team@latest/graphql/guides/forming-calls-with-graphql#authenticating-with-graphql). There are instructions on the page linked. Use scopes provided that match the behavior of GraphQL Explorer.
 
-    Name that variable: REACT_APP_GITHUB_ACCESS_TOKEN
+    Name .env variable: REACT_APP_GITHUB_ACCESS_TOKEN
 
 (2) `npm install` to set up node modules
 
