@@ -56,7 +56,6 @@ Testing is included in future improvements below, but query data can be double c
 - Refactoring:
 
   - At Breadcrumb.js line 26 there is a " > " character that **incorrectly** triggers an error in VS Code. I'd find a way not to set off those bells.
-  - Implement Redux-Persist: persist state even on refresh (Redux-Persist)
 
 - Additional Features:
   
