@@ -1,5 +1,5 @@
 // Libraries
-import { useState } from "react";
+import { useSelector } from 'react-redux';
 
 // Components, Modules, Styles
 import Search from "./Search";
@@ -9,8 +9,7 @@ import { PageStyle } from "../style/app";
 
 function App() {
   // state
-  const [topic, setTopic] = useState("react");
-  const [breadcrumbs, setBreadbrumbs] = useState([]);
+  const topic = useSelector(s => s.topic);
 
   // generates unique keys for lists
   function generateKey(i) {
@@ -20,20 +19,12 @@ function App() {
   return (
     <PageStyle>
       <h1>GitHub Topic Explorer</h1>
-      <Search setTopic={setTopic} setBreadbrumbs={setBreadbrumbs} />
-      <Breadcrumbs
-        setTopic={setTopic}
-        breadcrumbs={breadcrumbs}
-        setBreadbrumbs={setBreadbrumbs}
-        generateKey={generateKey}
-      />
-      <h2>{topic.toUpperCase()}</h2>
-      <RelatedTopics
-        topic={topic}
-        setTopic={setTopic}
-        setBreadcrumbs={setBreadbrumbs}
-        generateKey={generateKey}
-      />
+
+      <Search />
+      <Breadcrumbs generateKey={generateKey} />
+
+      <h2>{topic ? topic.toUpperCase() : ""}</h2>
+      <RelatedTopics generateKey={generateKey} />
     </PageStyle>
   );
 }

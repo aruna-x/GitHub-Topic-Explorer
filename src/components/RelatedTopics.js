@@ -1,10 +1,15 @@
 // Libraries
 import { gql, useQuery } from "@apollo/client";
+import { useSelector, useDispatch } from 'react-redux';
 
 // Components, Modules, Styles
 import { RelatedLink } from "../style/global";
 
-function RelatedTopics({ topic, setTopic, setBreadcrumbs, generateKey }) {
+function RelatedTopics({ generateKey }) {
+  // state
+  const dispatch = useDispatch();
+  const topic = useSelector(s => s.topic);
+
   // Apollo / GraphQL query
   const QUERY = gql`
     query ($topic: String!) {
@@ -29,8 +34,8 @@ function RelatedTopics({ topic, setTopic, setBreadcrumbs, generateKey }) {
 
   // when relatedTopic is clicked: add it to breadcrumbs & set new topic
   function relatedClick(relatedTopic) {
-    setBreadcrumbs((b) => [...b, relatedTopic]);
-    setTopic(relatedTopic);
+    dispatch({type: "ADD_BREADCRUMB", payload: relatedTopic});
+    dispatch({type: "SET_TOPIC", payload: relatedTopic})
   }
 
   // maps the related topics from query data to react-friendly list for display
