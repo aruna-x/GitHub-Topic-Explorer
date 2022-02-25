@@ -71,4 +71,3 @@ Testing is included in future improvements below, but query data can be double c
   - Improvements to the breadcrumb feature if I knew better what a user wanted. User testing would help.
   - Links to the most popular public repos associated with topics. 
   - A feature leveraging Chron Jobs and Twilio to notify a user of brand new "related topics" that may be added by GitHub. (A potential way to keep on top of the latest tech.)
-  - Any other improvements would entirely depend on the intended user's needs. I would want to know who it's for, why they need it, and what their experience of a demo page would be, in order to better fine tune the UI and their UX.
