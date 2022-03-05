@@ -18,7 +18,7 @@ const initialState = {
 };
 const mockStore = configureStore();
 let store;
-// source: https://stackoverflow.com/a/70149004
+// mock redux source: https://stackoverflow.com/a/70149004
 
 const mockQuery = [
   {
@@ -31,7 +31,7 @@ const mockQuery = [
     result: mockData,
   },
 ];
-
+// mock apollo source: https://www.apollographql.com/docs/react/v2/development-testing/testing/
 
 it('renders without crashing', () => {
   store = mockStore(initialState);
