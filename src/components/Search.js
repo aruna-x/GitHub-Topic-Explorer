@@ -1,12 +1,14 @@
 // Libraries
 import { useState } from "react";
+import { useDispatch } from 'react-redux';
 
 // Components, Modules, Styles
-import { Input, Button } from "../style/search.style";
+import { Input, Button } from "../style/search";
 
-function Search({ setTopic, setBreadbrumbs }) {
+function Search() {
   // state
   const [search, setSearch] = useState("");
+  const dispatch = useDispatch();
 
   // when user types in search field: update state
   function handleChange(e) {
@@ -16,9 +18,11 @@ function Search({ setTopic, setBreadbrumbs }) {
   // on submit: set new topic & reset search field + breadbrumbs
   function handleSearch(e) {
     e.preventDefault();
-    setTopic(search);
+    dispatch({type: "SET_TOPIC", payload: search})
+    // setTopic(search);
     setSearch("");
-    setBreadbrumbs([]);
+    // setBreadbrumbs([]);
+    dispatch({type: "RESET_BREADCRUMBS"});
   }
 
   return (

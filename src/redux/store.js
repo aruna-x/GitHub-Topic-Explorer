@@ -16,6 +16,8 @@ function reducer(state = initialState, action) {
       return { ...state, breadcrumbs: [...state.breadcrumbs, action.payload] };
     case "BREADCRUMB_CLICK":
       return { ...state, breadcrumbs: action.payload };
+    case "RESET_BREADCRUMBS":
+      return {...state, breadcrumbs: []}
     default:
       return state;
   }

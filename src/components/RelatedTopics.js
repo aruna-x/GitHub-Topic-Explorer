@@ -4,7 +4,7 @@ import { useSelector, useDispatch } from 'react-redux';
 
 // Components, Modules, Styles
 import { QUERY } from "../modules/apolloQuery";
-import { RelatedLink } from "../style/global.style";
+import { RelatedLink } from "../style/global";
 
 function RelatedTopics({ generateKey }) {
   // state
