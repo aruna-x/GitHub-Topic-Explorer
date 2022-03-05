@@ -3,8 +3,8 @@ import { Fragment } from 'react';
 import { useSelector, useDispatch } from 'react-redux';
 
 // Components, Modules, Styles
-import { RelatedLink } from "../style/global";
-import { BreadWrapper } from "../style/breadcrumbs";
+import { RelatedLink } from "../style/global.style";
+import { BreadWrapper } from "../style/breadcrumbs.style";
 
 function Breadcrumbs({ generateKey }) {
   // state

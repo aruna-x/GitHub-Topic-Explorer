@@ -1,29 +1,15 @@
 // Libraries
-import { gql, useQuery } from "@apollo/client";
+import { useQuery } from "@apollo/client";
 import { useSelector, useDispatch } from 'react-redux';
 
 // Components, Modules, Styles
-import { RelatedLink } from "../style/global";
+import { QUERY } from "../modules/apolloQuery";
+import { RelatedLink } from "../style/global.style";
 
 function RelatedTopics({ generateKey }) {
   // state
   const dispatch = useDispatch();
   const topic = useSelector(s => s.topic);
-
-  // Apollo / GraphQL query
-  const QUERY = gql`
-    query ($topic: String!) {
-      topic(name: $topic) {
-        stargazerCount
-        relatedTopics(first: 10) {
-          name
-          stargazers {
-            totalCount
-          }
-        }
-      }
-    }
-  `;
 
   const { loading, error, data } = useQuery(QUERY, {
     variables: { topic: topic },

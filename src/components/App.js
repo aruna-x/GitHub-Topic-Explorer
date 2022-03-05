@@ -5,7 +5,7 @@ import { useSelector } from 'react-redux';
 import Search from "./Search";
 import Breadcrumbs from "./Breadcrumbs";
 import RelatedTopics from "./RelatedTopics";
-import { PageStyle } from "../style/app";
+import { PageStyle } from "../style/app.style";
 
 function App() {
   // state

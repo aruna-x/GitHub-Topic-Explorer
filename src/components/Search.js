@@ -2,7 +2,7 @@
 import { useState } from "react";
 
 // Components, Modules, Styles
-import { Input, Button } from "../style/search";
+import { Input, Button } from "../style/search.style";
 
 function Search({ setTopic, setBreadbrumbs }) {
   // state
