@@ -18,10 +18,10 @@ function Search() {
   // on submit: set new topic & reset search field + breadbrumbs
   function handleSearch(e) {
     e.preventDefault();
+    if (search === "") return;
+
     dispatch({type: "SET_TOPIC", payload: search})
-    // setTopic(search);
     setSearch("");
-    // setBreadbrumbs([]);
     dispatch({type: "RESET_BREADCRUMBS"});
   }
 
