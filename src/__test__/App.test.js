@@ -16,8 +16,10 @@ const initialState = {
   topic: "react",
   breadcrumbs: [],
 };
+
 const mockStore = configureStore();
 let store;
+
 // mock redux source: https://stackoverflow.com/a/70149004
 
 const mockQuery = [
@@ -43,4 +45,17 @@ it('renders without crashing', () => {
     </Provider>
   );
   expect(screen.getByText('GitHub Topic Explorer')).toBeInTheDocument();
+});
+
+it('renders submit button correctly', () => {
+  store = mockStore(initialState);
+  render(
+    <Provider store={store}>
+      <MockedProvider mocks={mockQuery} addTypename={false}>
+        <App />
+      </MockedProvider>
+    </Provider>
+  );
+  const button = screen.getByRole('button', {name: "Submit"});
+  expect(button).toBeInTheDocument();
 });
